@@ -11,7 +11,7 @@ export default function Home() {
         <Section>
           <div className="relative w-[300px] h-[230px] rounded-[10px] shadow-light mb-4">
             <Image
-              src="/mitchel.png"
+              src="/mees.jpg"
               alt="Portrait photo of myself"
               className="object-cover rounded-[10px]"
               fill
