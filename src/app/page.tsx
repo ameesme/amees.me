@@ -33,7 +33,7 @@ export default function Home() {
           <Dash className="mt-8" />
         </Section>
         <Section>
-          <Heading variant="h2">Mobile Application Development</Heading>
+          <Heading variant="h1">Mobile Application Development</Heading>
           <Blockquote>
             Getting mobile-applications to market quickly is my craft and what I
             love doing most.
@@ -45,6 +45,26 @@ export default function Home() {
             apps in no-time, so they can be validated and enjoyed in the real
             world.
           </Paragraph>
+          <Dash className="mt-8" />
+        </Section>
+        <Section>
+          <Heading variant="h1">Product Development Consultancy</Heading>
+          <Paragraph>
+            Need someone to brainstorm with? An extra pair of eyes to assess the
+            viability and risks of a new opportunity? Or just some guidance in
+            the woods of technology?
+          </Paragraph>
+          <Paragraph>
+            Nothing gets me more excited than working with entrepreneurs to make
+            their ideas and ambitions come true.
+          </Paragraph>
+          <Dash className="mt-8" />
+        </Section>
+        <Section>
+          <Heading variant="h1">Experience</Heading>
+          <Heading variant="h2">Technologies</Heading>
+          <Heading variant="h2">Interpersonal</Heading>
+          <Heading variant="h2">Interests</Heading>
           <Dash className="mt-8" />
         </Section>
       </Container>
