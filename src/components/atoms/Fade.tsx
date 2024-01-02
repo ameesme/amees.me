@@ -9,7 +9,7 @@ export const Fade: FC<Props> = ({ className, ...rest }) => {
   return (
     <div
       className={classNames(
-        "w-inherit lg:h-[165px] bg-gradient-to-b from-background-translucent pointer-events-none",
+        "w-inherit lg:h-[165px] h-20 bg-gradient-to-b from-background-translucent pointer-events-none",
         className
       )}
       {...rest}

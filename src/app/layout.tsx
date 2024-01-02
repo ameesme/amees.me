@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: "Mees Boeijen - Indie app developer, digital product engineer",
   description:
     "Eindhoven-based indie app developer, specialized in Product Engineering and React Native.",
+  viewport: "width=device-width, initial-scale=1",
 };
 
 export default function RootLayout({
