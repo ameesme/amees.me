@@ -8,7 +8,7 @@ export type Props = {
 
 export const Section: FC<Props> = ({ children, className, ...rest }) => {
   return (
-    <div className={classNames("flex-col ", className)} {...rest}>
+    <div className={classNames("flex-col", className)} {...rest}>
       {children}
     </div>
   );

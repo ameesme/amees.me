@@ -1,9 +1,11 @@
 import classNames from "classnames";
+import { Work_Sans } from "next/font/google";
 import { FC, ReactNode } from "react";
 
 type Props = {
   children: ReactNode;
   className?: string;
+  ref?: any;
 };
 
 type HeadingVariants = "massive" | "title" | "subtitle" | "h1" | "h2";
@@ -111,6 +113,18 @@ export const Blockquote: FC<Props> = ({ className, ...rest }) => {
     <blockquote
       className={classNames(
         `text-blockquote mt-0 mb-[30px] font-regular border-l-[1px] border-text0 pl-[20px]`,
+        className
+      )}
+      {...rest}
+    />
+  );
+};
+
+export const Massive: FC<Props> = ({ className, ...rest }) => {
+  return (
+    <h1
+      className={classNames(
+        `text-massive font-light m-0 h-[80px] leading-[75px]`,
         className
       )}
       {...rest}

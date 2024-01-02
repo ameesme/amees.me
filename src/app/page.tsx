@@ -1,9 +1,16 @@
+"use client";
+
 import { Blockquote, Heading, Paragraph } from "@/components/Typography";
 import Dash from "@/components/atoms/Dash";
+import Card from "@/components/molecules/Card";
 import Container from "@/components/templates/Container";
 import Section from "@/components/templates/Section";
+import { Work_Sans } from "next/font/google";
 import Image from "next/image";
-
+// const WorkSans = Work_Sans({
+//   weight: ["500"],
+//   subsets: ["latin"],
+// });
 export default function Home() {
   return (
     <main className="flex min-h-screen min-w-screen">
@@ -17,7 +24,6 @@ export default function Home() {
               fill
             />
           </div>
-
           <Heading variant="title">Mees Boeijen</Heading>
           <Heading variant="subtitle">
             Indie app developer, digital product engineer.
@@ -45,6 +51,28 @@ export default function Home() {
             apps in no-time, so they can be validated and enjoyed in the real
             world.
           </Paragraph>
+          <div className="w-full flex flex-wrap justify-between gap-8 mt-8">
+            <Card
+              title="Idea"
+              description="Going from an idea to a clear product-definition."
+              onClick={() => {}}
+            />
+            <Card
+              title="Plan"
+              description="Create an ironclad product-development plan and team."
+              onClick={() => {}}
+            />
+            <Card
+              title="Guide"
+              description="Guide your team in making your product come to life..."
+              onClick={() => {}}
+            />
+            <Card
+              title="Build"
+              description="...or getting our own hands dirty, building your product together."
+              onClick={() => {}}
+            />
+          </div>
           <Dash className="mt-8" />
         </Section>
         <Section>

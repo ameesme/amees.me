@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans } from "next/font/google";
+import { IBM_Plex_Sans, Work_Sans } from "next/font/google";
 import "./globals.css";
 import classNames from "classnames";
 
