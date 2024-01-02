@@ -1,0 +1,20 @@
+import classNames from "classnames";
+import { FC } from "react";
+
+export type Props = {
+  className?: string;
+};
+
+export const Fade: FC<Props> = ({ className, ...rest }) => {
+  return (
+    <div
+      className={classNames(
+        "w-inherit lg:h-[165px] h-20 bg-gradient-to-b from-background-translucent",
+        className
+      )}
+      {...rest}
+    ></div>
+  );
+};
+
+export default Fade;
