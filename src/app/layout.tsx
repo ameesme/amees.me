@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Sans, Work_Sans } from "next/font/google";
 import "./globals.css";
 import classNames from "classnames";
@@ -12,7 +12,11 @@ export const metadata: Metadata = {
   title: "Mees Boeijen - Indie app developer, digital product engineer",
   description:
     "Eindhoven-based indie app developer, specialized in Product Engineering and React Native.",
-  viewport: "width=device-width, initial-scale=1",
+};
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#FFFEFC",
 };
 
 export default function RootLayout({
