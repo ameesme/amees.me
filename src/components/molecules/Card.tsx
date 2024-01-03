@@ -2,7 +2,8 @@
 
 import classNames from "classnames";
 import { FC, ReactNode, useState } from "react";
-import { Heading, Massive, Paragraph } from "../Typography";
+import { Massive, Paragraph } from "../Typography";
+import { LuPlus } from "react-icons/lu";
 
 export type Props = {
   title: string;
@@ -23,11 +24,13 @@ export const Card: FC<Props> = ({
   return (
     <div
       className={classNames(
-        "flex-1 bg-background shadow-light rounded-[22px] p-4 pb-5 flex-col min-w-[250px] lg:max-w-[300px] overflow-hidden cursor-pointer hover:bg-text0 hover:text-background transition-colors duration-200",
+        "flex-1 bg-background shadow-light rounded-[22px] p-4 pb-5 flex-col min-w-[250px] lg:max-w-[300px] overflow-hidden cursor-pointer hover:bg-text0 hover:text-background hover:shadow-short transition-all duration-200",
         className
       )}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseOver={() => setIsHovered(true)}
+      onMouseOut={() => setIsHovered(false)}
+      onTouchStart={() => setIsHovered(true)}
+      onTouchEnd={() => setIsHovered(false)}
       {...rest}
     >
       <div className="w-full">
@@ -40,8 +43,11 @@ export const Card: FC<Props> = ({
           {title}
         </Massive>
       </div>
-      <div className="flex flex-row justify-between align-bottom">
-        <Paragraph variant="button">{description}</Paragraph>
+      <div className="flex flex-row justify-between items-end">
+        <Paragraph className="flex-1" variant="button">
+          {description}
+        </Paragraph>
+        <LuPlus className="h-4 w-4" />
       </div>
     </div>
   );

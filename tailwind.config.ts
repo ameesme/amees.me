@@ -56,6 +56,7 @@ const config: Config = {
       },
       boxShadow: {
         light: "4px 4px 16px rgba(0, 0, 0, 0.08)",
+        short: "4px 4px 8px rgba(0, 0, 0, 0.25)",
         deep: "0px 4px 4px rgba(0, 0, 0, 0.25)",
       },
     },
