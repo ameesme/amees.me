@@ -13,15 +13,15 @@
     transform: translateX(0%);
   }
   50% {
-    transform: translateX(-110%);
+    transform: translateX(-100%);
     visibility: visible;
   }
   50.1% {
-    transform: translateX(-110%);
+    transform: translateX(-100%);
     visibility: hidden;
   }
   50.2% {
-    transform: translateX(110%);
+    transform: translateX(100%);
     visibility: hidden;
   }
   50.3% {

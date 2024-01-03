@@ -3,6 +3,7 @@
 import { Blockquote, Heading, Paragraph } from "@/components/Typography";
 import Dash from "@/components/atoms/Dash";
 import Card from "@/components/molecules/Card";
+import CardsContainer from "@/components/templates/CardsContainer";
 import Container from "@/components/templates/Container";
 import Section from "@/components/templates/Section";
 import { Work_Sans } from "next/font/google";
@@ -51,7 +52,7 @@ export default function Home() {
             apps in no-time, so they can be validated and enjoyed in the real
             world.
           </Paragraph>
-          <div className="w-full flex flex-wrap justify-between gap-8 mt-8">
+          <CardsContainer>
             <Card
               title="Idea"
               description="Going from an idea to a clear product-definition."
@@ -72,7 +73,7 @@ export default function Home() {
               description="...or getting our own hands dirty, building your product together."
               onClick={() => {}}
             />
-          </div>
+          </CardsContainer>
           <Dash className="mt-8" />
         </Section>
         <Section>
@@ -90,10 +91,52 @@ export default function Home() {
         </Section>
         <Section>
           <Heading variant="h1">Experience</Heading>
-          <Heading variant="h2">Technologies</Heading>
-          <Heading variant="h2">Interpersonal</Heading>
-          <Heading variant="h2">Interests</Heading>
-          <Dash className="mt-8" />
+          <Section className="mb-[30px]">
+            <Heading variant="h2">Technologies</Heading>
+            <CardsContainer>
+              <Card
+                title="Web"
+                description="10 years of experience in web-application development."
+                onClick={() => {}}
+              />
+              <Card
+                title="Mobile"
+                description="Expert in React Native with a design-background."
+                onClick={() => {}}
+              />
+            </CardsContainer>
+          </Section>
+          <Section className="mb-[30px]">
+            <Heading variant="h2">Interpersonal</Heading>
+            <CardsContainer>
+              <Card
+                title="Leadership"
+                description="6 years of experience as a tech-lead as a startup co-founder."
+                onClick={() => {}}
+              />
+            </CardsContainer>
+          </Section>
+          <Section className="mb-[30px]">
+            <Heading variant="h2">Interests</Heading>
+            <CardsContainer>
+              <Card
+                title="Infrastructure"
+                description="Everything from networking to data-security and bare-metal."
+                onClick={() => {}}
+              />
+              <Card
+                title="3D"
+                description="Exploring the depths of physical product design."
+                onClick={() => {}}
+              />
+              <Card
+                title="Sustainability"
+                description="Animal rights activist and environmentalist."
+                onClick={() => {}}
+              />
+            </CardsContainer>
+          </Section>
+          <Dash className="mt-16" />
         </Section>
       </Container>
     </main>
