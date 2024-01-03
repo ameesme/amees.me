@@ -17,7 +17,7 @@ export default function Home() {
     <main className="flex min-h-screen min-w-screen">
       <Container>
         <Section>
-          <div className="relative w-[300px] h-[230px] rounded-[10px] shadow-light mb-4">
+          <div className="relative w-[300px] h-[230px] max-w-full aspect-auto rounded-[10px] shadow-light mb-4">
             <Image
               src="/mees.jpg"
               alt="Portrait photo of myself"
