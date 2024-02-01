@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Sans, Work_Sans } from "next/font/google";
 import "./globals.css";
 import classNames from "classnames";
+import HomeContent from "@/content/Home";
+import { usePathname } from "next/navigation";
 
 const IBMPlex = IBM_Plex_Sans({
   weight: ["300", "400", "700"],
@@ -26,7 +28,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={classNames("bg-grey-250", IBMPlex.className)}>
+      <body
+        className={classNames(
+          "flex bg-grey-250 w-full h-screen overflow-hidden",
+          IBMPlex.className
+        )}
+      >
+        <HomeContent />
         {children}
       </body>
     </html>

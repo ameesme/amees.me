@@ -37,6 +37,7 @@ export const Heading: FC<
     case "h2":
       size = "text-h2";
       weight = "font-bold";
+      marginBottom = "mb-[10px]";
       as = "h2";
       break;
   }

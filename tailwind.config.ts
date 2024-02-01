@@ -5,17 +5,20 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/content/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/hooks/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
         primary: {
           DEFAULT: "#F2385A",
+          translucent: "rgba(233, 201, 207, 0.8)",
           dark: "#992439",
         },
         background: {
           DEFAULT: "#FFFEFC",
-          translucent: "rgba(255, 254, 252, 0.9)",
+          translucent: "rgba(242, 56, 90, 0.08)",
           darkTranslucent: "rgba(0, 0, 0, 0.5)",
         },
         text0: "#100F0F",
@@ -58,6 +61,7 @@ const config: Config = {
         light: "4px 4px 16px rgba(0, 0, 0, 0.08)",
         short: "4px 4px 8px rgba(0, 0, 0, 0.25)",
         deep: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+        ring: "0 0 10px transparent",
       },
     },
   },
