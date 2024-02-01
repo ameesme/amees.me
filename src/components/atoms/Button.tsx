@@ -21,12 +21,12 @@ export const Button: FC<Props> = ({ className, children, ...rest }) => {
   return (
     <button
       className={classNames(
-        "h-[42px] px-4 flex flex-row items-center rounded-full border-[1px] shadow-light transition-all duration-200  active:shadow-none",
+        "h-[42px] px-4 flex flex-row items-center rounded-full border-[1px] shadow-light transition-all duration-200  active:shadow-none relative",
         buttonVariantMap[rest.variant || "secondary"],
         rest.icon && "pr-2",
         className
       )}
-      ref={glowContainerRef}
+      ref={glowContainerRef as any}
       {...rest}
     >
       <Paragraph variant="button">{children}</Paragraph>

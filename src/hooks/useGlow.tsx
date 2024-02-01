@@ -30,10 +30,11 @@ export const GlowNode = forwardRef<HTMLDivElement, Props>(
     );
   }
 );
+GlowNode.displayName = "GlowNode";
 
 export function useGlow(fixed?: boolean, size?: "large" | "small") {
   const glowRef = useRef<HTMLDivElement>(null);
-  const glowContainerRef = useRef<HTMLDivElement | HTMLButtonElement>(null);
+  const glowContainerRef = useRef<any>(null);
   const [xPosition, setXPosition] = useState<number>(0);
   const [yPosition, setYPosition] = useState<number>(0);
   const [mouseIn, setMouseIn] = useState<boolean>(false);
@@ -42,18 +43,21 @@ export function useGlow(fixed?: boolean, size?: "large" | "small") {
   useEffect(() => {
     if (glowContainerRef.current) {
       // Bind mouse-events to the container
-      glowContainerRef.current.addEventListener("mousemove", (e) => {
-        // Get relative position in the container
-        const x = e.pageX - glowContainerRef.current.offsetLeft;
-        const y = fixed
-          ? e.layerY
-          : e.pageY +
-            document.querySelector("main").scrollTop -
-            glowContainerRef.current.offsetTop;
-        // Set the position state
-        setXPosition(x - (size === "small" ? 200 : 400));
-        setYPosition(y - (size === "small" ? 200 : 400));
-      });
+      glowContainerRef.current.addEventListener(
+        "mousemove",
+        (e: MouseEvent) => {
+          // Get relative position in the container
+          const x = e.pageX - glowContainerRef.current.offsetLeft;
+          const y = fixed
+            ? e.offsetY
+            : e.pageY +
+              (document.querySelector("main")?.scrollTop || 0) -
+              glowContainerRef.current.offsetTop;
+          // Set the position state
+          setXPosition(x - (size === "small" ? 200 : 400));
+          setYPosition(y - (size === "small" ? 200 : 400));
+        }
+      );
 
       // Disable on mouse out
       glowContainerRef.current.addEventListener("mouseout", () => {
@@ -75,7 +79,7 @@ export function useGlow(fixed?: boolean, size?: "large" | "small") {
         glowContainerRef.current.removeEventListener("mouseout", () => {});
       }
     };
-  }, [glowContainerRef]);
+  }, [glowContainerRef, fixed, size]);
 
   useEffect(() => {
     if (glowRef.current) {
@@ -92,3 +96,5 @@ export function useGlow(fixed?: boolean, size?: "large" | "small") {
 
   return [glowContainerRef, glowRef];
 }
+
+export default useGlow;
