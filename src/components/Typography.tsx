@@ -25,14 +25,17 @@ export const Heading: FC<
     case "title":
       size = "text-title";
       weight = "font-bold";
+      marginBottom = "mb-[0]";
       break;
     case "subtitle":
       size = "text-subtitle";
       weight = "font-regular";
+      marginBottom = "mb-[20px]";
       break;
     case "h1":
       size = "text-h1";
       weight = "font-bold";
+      marginBottom = "mb-[20px]";
       break;
     case "h2":
       size = "text-h2";
@@ -125,7 +128,7 @@ export const Massive: FC<Props> = ({ className, ...rest }) => {
   return (
     <h1
       className={classNames(
-        `text-massive font-light m-0 h-[80px] leading-[75px]`,
+        `text-massive font-light m-0 h-[80px] leading-[100px]`,
         className
       )}
       {...rest}

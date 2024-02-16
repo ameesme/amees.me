@@ -16,24 +16,34 @@ import { FC } from "react";
 import { LuChevronRight } from "react-icons/lu";
 
 export type Props = {
+  children?: React.ReactNode;
   className?: string;
 };
 
-export const HomeContent: FC<Props> = ({ className, ...rest }) => {
+export const HomeContent: FC<Props> = ({ children, className, ...rest }) => {
   const pathName = usePathname();
-  const isInactive = pathName !== "/";
+  const showChildren = pathName !== "/";
   return (
     <main
       className={classNames(
-        "overflow-y-auto transition-all duration-200 relative",
-        isInactive ? "overflow-y-hidden" : "w-full",
+        "overflow-y-auto transition-all duration-200 relative w-full flex",
+        showChildren ? "overflow-y-hidden" : "",
         className
       )}
       {...rest}
     >
-      <Container isInactive={isInactive}>
+      <Container isInactive={showChildren}>
         <Section>
-          <div className="relative w-[300px] h-[230px] max-w-full rounded-[10px] shadow-light mb-4">
+          <div className="relative max-w-full mb-4 mt-[-80px] ml-[-32px]">
+            <Image
+              src="/am-square.png"
+              alt="3D logo illustration"
+              width={125}
+              height={125}
+              className="mix-blend-multiply"
+            />
+          </div>
+          <div className="relative w-[250px] h-[200px] max-w-full rounded-[10px] shadow-light mb-4">
             <Image
               src="/mees.jpg"
               alt="Portrait photo of myself"
@@ -41,13 +51,6 @@ export const HomeContent: FC<Props> = ({ className, ...rest }) => {
               fill
             />
           </div>
-          {/* <Image
-            src="/untitled5.png"
-            width={500}
-            height={200}
-            alt="Mees Boeijen"
-            className="ml-[-25px]"
-          /> */}
           <Heading variant="title">Mees Boeijen</Heading>
           <Heading variant="subtitle">
             Indie app developer, digital product engineer.
@@ -76,17 +79,18 @@ export const HomeContent: FC<Props> = ({ className, ...rest }) => {
             world.
           </Paragraph>
           <CardsContainer>
-            <Link href="/schedule-call">
-              <Card
-                title="Idea"
-                description="Going from an idea to a clear product-definition."
-              />
-            </Link>
+            <Card
+              title="Idea"
+              description="Going from an idea to a clear product-definition."
+              href="/schedule-call"
+            />
             <Card
               title="Plan"
               description="Create an ironclad product-development plan and team."
               onClick={() => {}}
             />
+          </CardsContainer>
+          <CardsContainer>
             <Card
               title="Guide"
               description="Guide your team in making your product come to life..."
@@ -159,6 +163,8 @@ export const HomeContent: FC<Props> = ({ className, ...rest }) => {
                 description="Exploring the depths of physical product design."
                 onClick={() => {}}
               />
+            </CardsContainer>
+            <CardsContainer>
               <Card
                 title="Sustainability"
                 description="Animal rights activist and environmentalist."
@@ -169,11 +175,17 @@ export const HomeContent: FC<Props> = ({ className, ...rest }) => {
           <Dash className="mt-16" />
         </Section>
       </Container>
-      <div className="flex flex-col lg:flex-row items-end w-[840px] max-w-full min-h-[42px] fixed z-10 justify-end space-y-[10px] lg:space-y-0 lg:space-x-[10px] bottom-[38px] left-0 px-10 lg:pl-32 lg:pr-20">
-        <Availability availability="limited" className="hidden md:flex" />
-        <Button variant="primary" icon={<LuChevronRight />}>
-          Schedule a call
-        </Button>
+      <div
+        className={classNames(
+          "fixed h-min-screen w-[790px] lg:max-w-full max-w-[calc(100%-50px)] h-full top-0 space-y-[220px] bg-background shadow-deep overflow-y-auto py-20 px-10 lg:py-40 lg:pl-32 lg:pr-20 transition-all duration-500",
+          showChildren
+            ? "translate-x-0 left-[50px] opacity-100"
+            : "translate-x-[100%] left-[0px] opacity-0",
+          className
+        )}
+        {...rest}
+      >
+        {children}
       </div>
     </main>
   );

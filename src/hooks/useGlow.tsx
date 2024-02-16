@@ -33,7 +33,7 @@ export const GlowNode = forwardRef<HTMLDivElement, Props>(
 GlowNode.displayName = "GlowNode";
 
 export function useGlow(fixed?: boolean, size?: "large" | "small") {
-  const glowRef = useRef<HTMLDivElement>(null);
+  const glowRef = useRef<HTMLAnchorElement | HTMLDivElement | null>(null);
   const glowContainerRef = useRef<any>(null);
   const [xPosition, setXPosition] = useState<number>(0);
   const [yPosition, setYPosition] = useState<number>(0);
